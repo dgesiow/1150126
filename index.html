@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>114/11/24 探究實作研習 - 區位選擇</title>
+    <title>114/11/24 探究實作研習 - 半導體與地方區位探究</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         body {
@@ -28,11 +28,7 @@
             padding-bottom: 20px;
             margin-bottom: 30px;
         }
-        h1 {
-            color: #0056b3;
-            font-size: 2.2em;
-            margin: 0;
-        }
+        h1 { color: #0056b3; font-size: 2.2em; margin: 0; }
         .info-bar {
             background-color: #e7f1ff;
             padding: 15px;
@@ -42,6 +38,14 @@
             flex-direction: column;
             gap: 5px;
         }
+        .info-bar a {
+            background: none;
+            padding: 0;
+            margin: 0;
+            display: inline;
+            color: #0056b3;
+            text-decoration: underline;
+        }
         h2 {
             color: #2c3e50;
             border-left: 6px solid #0056b3;
@@ -49,56 +53,30 @@
             margin-top: 40px;
             font-size: 1.5em;
             background: #f8f9fa;
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding: 10px 15px;
             text-align: left;
         }
-        h3 {
-            color: #1e88e5;
-            margin-top: 30px;
-            font-size: 1.3em;
-            text-align: left;
-        }
-        /* 數列編號樣式 */
-        ol {
-            padding-left: 25px;
-            text-align: left;
-        }
-        li {
-            margin-bottom: 15px;
-            padding: 15px;
-            background: #fff;
-            border: 1px solid #eee;
-            border-radius: 10px;
-        }
-        /* 圖片區塊樣式 */
-        .image-placeholder {
-            margin: 20px 0;
-            text-align: left;
-        }
-        .image-placeholder img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border: 1px solid #ddd;
-        }
+        h3 { color: #1e88e5; margin-top: 30px; font-size: 1.3em; text-align: left; }
+        
+        /* 列表樣式 */
+        ol { padding-left: 25px; text-align: left; }
+        li { margin-bottom: 15px; padding: 15px; background: #fff; border: 1px solid #eee; border-radius: 10px; list-style-position: outside; }
+        
         /* 連結按鈕風格 */
         a {
             color: #007bff;
             text-decoration: none;
             font-weight: bold;
             display: inline-block;
-            margin: 2px 5px;
+            margin: 2px 4px;
             padding: 4px 12px;
             border-radius: 6px;
-            background: #eef6ff;
+            background: #ebf5ff;
             transition: 0.3s;
         }
-        a:hover {
-            background: #007bff;
-            color: #fff;
-        }
+        a:hover { background: #007bff; color: #fff; }
+
+        /* 標籤風格 */
         .badge {
             background: #0056b3;
             color: white;
@@ -108,14 +86,18 @@
             margin-right: 8px;
             display: inline-block;
         }
-        .tech-section {
+
+        /* 技術區塊風格 */
+        .tech-card {
             margin-top: 10px;
-            padding: 15px;
-            border-left: 4px solid #34a853;
-            background: #f9f9f9;
-            border-radius: 0 8px 8px 0;
+            padding: 20px;
+            border-left: 5px solid #34a853;
+            background: #f6fff8;
+            border-radius: 0 12px 12px 0;
         }
-        .gas-section { border-left-color: #fbbc05; }
+        .gas-card { border-left-color: #fbbc05; background: #fffdf5; }
+        .tech-title { font-weight: bold; font-size: 1.1em; margin-bottom: 10px; display: block; }
+        
         footer {
             text-align: left;
             margin-top: 40px;
@@ -138,24 +120,19 @@
         <span><i class="fas fa-calendar-alt"></i> 研習時間：115/10/26</span>
         <span><i class="fas fa-map-marker-alt"></i> 地點：彰化女中</span>
         <span><i class="fas fa-user-tie"></i> 講師：周士堯</span>
+        <span><i class="fas fa-envelope"></i> Email：<a href="mailto:dge@gapp.ylsh.ilc.edu.tw">dge@gapp.ylsh.ilc.edu.tw</a></span>
     </div>
 
     <h2>一、研習主題與概念 📚</h2>
-    
-    <div class="image-placeholder">
-        <img src="您的圖片網址" alt="研習主題架構圖">
-        <p style="font-size: 0.8em; color: #888; margin-top: 5px;">▲ 您可以在此處放上研習架構圖或半導體產業鏈圖示</p>
-    </div>
-
-    <p style="text-align: left; padding-left: 5px;">
-        <a href="https://docs.google.com/presentation/d/1x2-wujVLo1DIdOP4Y77tFswTNQ5nhSOz/edit?usp=sharing&ouid=108500835534083863161&rtpof=true&sd=true" target="_blank">
+    <p style="text-align: left;">
+        <a href="https://docs.google.com/presentation/d/1x2-wujVLo1DIdOP4Y77tFswTNQ5nhSOz/edit?usp=sharing" target="_blank">
             <i class="fas fa-file-powerpoint"></i> 點此下載：研習簡報 (PPT)
         </a>
     </p>
 
     <h2>二、實作資料連結 🔗</h2>
 
-    <h3>(一) 半導體產業區位探究-高中半導體選修課程</h3>
+    <h3>(一) 半導體產業區位探究-高中選修課程</h3>
     <ol>
         <li>
             <span class="badge">課程資源</span> 教育部高中半導體選修課程：
@@ -170,24 +147,18 @@
         <li>
             <span class="badge">遊戲化教學</span> 學生操作 Twine 文字遊戲：
             <a href="https://dgesiow.github.io/places-csv-search/game1.html" target="_blank">線上遊戲</a>
-            <a href="https://drive.google.com/file/d/1dYyG_-dFokFcq2LHXLBnTL6w18pfna7C/view?usp=sharing" target="_blank">離線遊戲檔</a><br>
-            <div style="margin-top:10px; font-size: 0.9em; color: #666;">
-                <i class="fas fa-tools"></i> 教師設計工具：
-                <a href="https://twinery.org/2/#/">線上編輯器</a>
-                <a href="https://gemini.google.com/share/fe56b6dd835a">AI 協作設計</a>
-                <a href="https://docs.google.com/document/d/1ZI9vA7IAvBki_RCvU_lMT2CWFiYT-oze/edit?usp=sharing">教學文件</a>
-            </div>
+            <a href="https://drive.google.com/file/d/1dYyG_-dFokFcq2LHXLBnTL6w18pfna7C/view?usp=sharing" target="_blank">離線檔案</a>
         </li>
         <li>
             <span class="badge">地圖呈現</span> 台積電晶圓廠故事地圖：
             <a href="https://arcg.is/zrjaC0" target="_blank">StoryMap</a>
-            <a href="https://drive.google.com/file/d/11SruM6TmlNkInVLzZ2TOR7Pgux4iUfku/view?usp=drive_link">晶圓廠 KML</a>
-            <a href="https://drive.google.com/file/d/1fJ71XnjYMvhSXw-HIZVHYttXTROdRMOU/view?usp=sharing">先進封裝廠 KML</a>
+            <a href="https://drive.google.com/file/d/11SruM6TmlNkInVLzZ2TOR7Pgux4iUfku/view?usp=drive_link" target="_blank">晶圓廠 KML</a>
+            <a href="https://drive.google.com/file/d/1fJ71XnjYMvhSXw-HIZVHYttXTROdRMOU/view?usp=sharing" target="_blank">先進封裝廠 KML</a>
         </li>
         <li>
-            <span class="badge">地圖編輯</span> ArcGIS 線上編輯工具：
+            <span class="badge">地圖編輯</span> ArcGIS 工具連結：
             <a href="https://storymaps.arcgis.com/" target="_blank">ARCGIS-Storymap 編輯器</a>
-            <a href="https://www.arcgis.com/home/index.html" target="_blank">ArcGIS Online 編輯器</a>
+            <a href="https://www.arcgis.com/home/index.html" target="_blank">ArcGIS Online</a>
         </li>
     </ol>
 
@@ -197,25 +168,28 @@
             <span class="badge">AI 應用</span> 空間實作探究：
             <a href="https://padlet.com/national_yilan_senior_high_school/114-11-22-ai-unqyq6g9h9tso6f8" target="_blank">Padlet 資源討論版</a>
         </li>
-        <li class="tech-section gas-section">
-            <strong>Google App Script (GAS) 應用 ⚡</strong><br>
-            1. 產生 Google 地標：<a href="https://script.google.com/a/macros/gapp.ylsh.ilc.edu.tw/s/AKfycbydOQFxdWmp0nDO49jadj9qNJJSddw0wSZyQnWmHE-LTCNuv-CXe7HaTi3qiLdMvco/exec">查詢網頁 App</a><br>
-            2. 檔案轉 KML：<a href="https://script.google.com/a/macros/gapp.ylsh.ilc.edu.tw/s/AKfycbye4g201kMHrlF-gVfVIb9f6HdRHoSDgt5XVkcJhprSL9zooPOVQXgLINPnqBlgc-8h/exec">CSV 轉檔 App</a> ➡️ <a href="https://maps.nlsc.gov.tw/">國土測繪系統</a><br>
-            3. 教學資源：<a href="https://dgesiow.github.io/google-places-tutorial/">搜尋網頁 App 教學</a>
+        
+        <li class="tech-card gas-card">
+            <span class="tech-title">Google App Script (GAS) 應用 ⚡</span>
+            • 產生 Google 地標：<a href="https://script.google.com/a/macros/gapp.ylsh.ilc.edu.tw/s/AKfycbydOQFxdWmp0nDO49jadj9qNJJSddw0wSZyQnWmHE-LTCNuv-CXe7HaTi3qiLdMvco/exec" target="_blank">查詢網頁 App</a><br>
+            • 檔案轉 KML：<a href="https://script.google.com/a/macros/gapp.ylsh.ilc.edu.tw/s/AKfycbye4g201kMHrlF-gVfVIb9f6HdRHoSDgt5XVkcJhprSL9zooPOVQXgLINPnqBlgc-8h/exec" target="_blank">CSV 轉檔 App</a> ➡️ <a href="https://maps.nlsc.gov.tw/" target="_blank">國土測繪系統</a><br>
+            • 教學資源：<a href="https://dgesiow.github.io/google-places-tutorial/" target="_blank">搜尋網頁 App 教學</a> ➡️ <a href="https://docs.google.com/document/d/1xlPIGU9Ug8wlOUGAwkOMEOEtf2Oz0r_YnxotvYKyXVc/edit?usp=sharing" target="_blank">測試金鑰</a>
         </li>
-        <li class="tech-section">
-            <strong>Python & Google Colab AI 協作 🐍</strong><br>
-            1. <a href="https://colab.research.google.com/?hl=zh-tw">Google Colab 筆記本首頁</a><br>
-            2. CSV 合併：<a href="https://drive.google.com/file/d/1ZInY0iu4VK-ZYosPVhaR5WwbUS9HQffz/view?usp=sharing">程式範例檔</a><br>
-            3. 自動繪製互動地圖：<a href="https://drive.google.com/file/d/15qjI0ndoZd2-Gx-tjlSlGyECg2KoN-uO/view?usp=sharing">程式範例檔</a><br>
-            4. 熱區圖與分布圖：<a href="https://drive.google.com/file/d/13xYDOv1o_-20t_XPz6zUrUHCrPF-S93j/view?usp=sharing">程式範例檔</a><br>
-            5. 轉 KML 比對：<a href="https://drive.google.com/file/d/1lwFks0EcF8ug4F0sika7n74placsl0fF/view?usp=sharing">程式檔</a> ➡️ <a href="https://maps.nlsc.gov.tw/">國土測繪系統</a><br>
-            6. 轉 SHP 比對：<a href="https://drive.google.com/file/d/1T4OV-JThU1WJ4dO4fj5l8tarzC4HQDOZ/view?usp=sharing">程式檔</a> ➡️ <a href="https://moisagis.moi.gov.tw/moiap/gis2010/Pro/Logged/MapPro/index.cfm?WORK=statistics">國土社會經濟統計網</a>
+
+        <li class="tech-card">
+            <span class="tech-title">Python & Google Colab AI 協作 🐍</span>
+            • <a href="https://colab.research.google.com/?hl=zh-tw" target="_blank">Google Colab 筆記本首頁</a><br>
+            • CSV 合併：<a href="https://drive.google.com/file/d/1ZInY0iu4VK-ZYosPVhaR5WwbUS9HQffz/view?usp=sharing" target="_blank">程式範例檔</a><br>
+            • 自動繪製互動地圖：<a href="https://drive.google.com/file/d/15qjI0ndoZd2-Gx-tjlSlGyECg2KoN-uO/view?usp=sharing" target="_blank">程式範例檔</a><br>
+            • 熱區圖與分布圖：<a href="https://drive.google.com/file/d/13xYDOv1o_-20t_XPz6zUrUHCrPF-S93j/view?usp=sharing" target="_blank">程式範例檔</a><br>
+            • 轉 KML 比對：<a href="https://drive.google.com/file/d/1lwFks0EcF8ug4F0sika7n74placsl0fF/view?usp=sharing" target="_blank">程式檔</a> ➡️ <a href="https://maps.nlsc.gov.tw/" target="_blank">國土測繪系統</a><br>
+            • 轉 SHP 比對：<a href="https://drive.google.com/file/d/1T4OV-JThU1WJ4dO4fj5l8tarzC4HQDOZ/view?usp=sharing" target="_blank">程式檔</a> ➡️ <a href="https://moisagis.moi.gov.tw/" target="_blank">國土社會經濟統計網</a>
         </li>
     </ol>
 
     <footer>
-        <p>© 2026 探究與實作研習工作坊 | 講師：周士堯 | 彰化女中</p>
+        <p>© 2026 探究與實作研習工作坊 | 講師：周士堯 | 宜蘭高中</p>
+        <p>Email: <a href="mailto:dge@gapp.ylsh.ilc.edu.tw">dge@gapp.ylsh.ilc.edu.tw</a></p>
     </footer>
 </div>
 
